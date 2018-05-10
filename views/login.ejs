@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页</title>
+</head>
+<body>
+    <h1>用户登录</h1>
+    <form method="POST">
+        用户名:<input type="text" id="username"></br>
+        密码 :<input type="password" id="password"></br>
+        <input type="button" value="登录" id="login">
+    </form>
+</body>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $("#login").click(function () {
+        $.post("/denglu", {
+            "username": $("#username").val(),
+            "password": $("#password").val()
+        }, function (result) {
+            if(result === "-2") {
+                alert("没有这个用户名");
+            } else if(result === "1") {
+                alert("登录成功");
+            } else {
+                alert("登录失败");
+            }
+        })
+    })
+</script>
+</html>

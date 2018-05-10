@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页</title>
+</head>
+<body>
+    <h1>用户注册</h1>
+    <form method="POST">
+        用户名:<input type="text" id="username"></br>
+        密码   :<input type="password" id="password"></br>
+        <input type="button" value="注册" id="register">
+    </form>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+     $("#register").click(function () {
+         $.post("/zhuce",{
+             "username":$("#username").val(),
+              "password":$("#password").val()
+         },function (result) {
+             console.log(result);
+         })
+     })
+    </script>
+</body>
+</html>
