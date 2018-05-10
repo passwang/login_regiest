@@ -1,2 +1,2 @@
 # login_regiest
-用node实现ajax登录注册替代form表单提交
+用node实现ajax登录注册替代form表单提交，并将密码用MD5加密存到数据库中，数据库为MongoDB
